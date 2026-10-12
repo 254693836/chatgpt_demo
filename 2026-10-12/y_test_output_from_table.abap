@@ -90,7 +90,7 @@ FORM output_table_to_csv USING it_table    TYPE ANY TABLE
     CLOSE DATASET lv_path.
   ELSE.
     " GUI_DOWNLOAD writes to the SAP GUI frontend, not to the ABAP server.
-    lv_path = |{ p_lcldir }\{ iv_file_name }|.
+    lv_path = |{ p_lcldir }/{ iv_file_name }|.
     CALL FUNCTION 'GUI_DOWNLOAD'
       EXPORTING
         filename = lv_path
